@@ -11,6 +11,7 @@ class Card {
 		//printing card
 		this.divCardboard = document.createElement("div")
 		this.divCardboard.id = "cardboard"
+		this.divCardboard.classList.add("cardboard")
 	}
 
 	
@@ -32,22 +33,60 @@ class Creature extends Card {
 
 	printCard(battlefield){
 
+
+
 		this.divCardHeader = document.createElement("div")
 		this.divCardHeader.classList.add("cardHeader")
 
-
-		
 		this.cardName = document.createElement("p")
 		this.cardName.id = "cardName";
 		this.cardName.innerText = this.name;
+		this.cardName.classList.add("cardName")
+
+		this.manaCost = document.createElement("div")
+		this.manaCost.id = "manaCost"
 
 		this.cardStat = document.createElement("p")
 		this.cardStat.id = "cardStat";
 		this.cardStat.innerText = this.power + "/" + this.toughness;
+
+		this.divIllus = document.createElement("div")
+		this.divIllus.classList.add("illus")
+		this.divIllus.id = "illus"
+
+		this.divTextContainer = document.createElement("div")
+		this.divTextContainer.id = "textContainer"
+		this.divTextContainer.classList.add("textContainer")
+
+		this.ability = document.createElement("p")
+		this.ability.id = "ability"
+		this.ability.classList.add("margin-auto")
+
+		this.elementFlavorText = document.createElement("p")
+		this.elementFlavorText.id = "flavorText"
+		this.elementFlavorText.classList.add("margin-auto")
+		this.elementFlavorText.innerText = this.flavorText
+
+		battlefield.appendChild(this.divCardboard)
+		this.divCardboard.appendChild(this.divCardHeader)
+		this.divCardHeader.appendChild(this.cardName)
+		this.divCardHeader.appendChild(this.manaCost)
+		this.divCardboard.appendChild(this.divIllus)
+		this.divCardboard.appendChild(this.divTextContainer)
+		this.divTextContainer.appendChild(this.ability)
+		this.divTextContainer.appendChild(this.elementFlavorText)
+
+
+
+
+
+
+		/*
 		this.divDataCard.appendChild(this.cardName)
 		this.divDataCard.appendChild(this.cardStat)
 		this.divCardboard.appendChild(this.divDataCard)
 		battlefield.appendChild(this.divCardboard)
+		*/
 	}
 
 }
@@ -55,7 +94,6 @@ class Creature extends Card {
 //let a = new Card ("bosque", "habia una vez...", "verde");
 
 let b = new Creature ("lobo", "lobo solitario", "verde", 2,2);
-b.printCard(battlefield)
 b.printCard(battlefield)
 /*
 let button = document.querySelector("#generate");

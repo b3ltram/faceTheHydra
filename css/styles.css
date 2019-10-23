@@ -56,4 +56,6 @@
 	position: relative;
 	width: 80%;
 	background-color: yellow;
+	display: flex;
+	justify-content: space-around;
 }
