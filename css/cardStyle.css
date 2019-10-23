@@ -1,0 +1,61 @@
+.card{
+	background-color: grey;
+	border-radius: 5px;
+	width: 238px;
+	height: 332px;
+	align-items: center;
+}
+
+.green{
+	background-color: green;
+}
+
+.cardboard{
+	width: 238px;
+	height: 332px;
+	background-color: grey;
+}
+
+.cardHeader{
+	display: flex;
+	justify-content: space-between;
+}
+
+.name{
+
+}
+
+.statHolder{
+
+}
+
+.stat-container{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.stat{
+	background-color: white;
+	width: 25px;
+	height: 20px;	
+}
+
+.textContainer{
+	margin: auto;
+	width: 200px;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.margin-auto{
+	margin: auto;
+}
+
+.illus{
+	margin: auto;
+	width: 200px;
+	height: 100px;
+	background-color: white;
+}

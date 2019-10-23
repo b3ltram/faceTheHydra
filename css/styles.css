@@ -1,0 +1,59 @@
+#listado .fila {
+		width:580px;
+		margin-bottom:5px;
+	}
+	#listado .fila>div {
+		width:90px;
+		height:130px;
+		border:1px solid #808080;
+		border-radius:5px;
+		margin-left:-50px;
+		background:white;
+		display:inline-block;
+		padding:5px;
+	}
+	#listado .fila>div>span {
+		font-size:12px;
+	}
+	#listado .fila>div:first-child {
+		margin-left:0px;
+	}
+
+.board{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+
+.top{
+	background-color: green;
+	width: 80%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.deckZone{
+	background-color: red;
+	width: 238px;
+	height: 332px;
+}
+
+.graveyard{
+	background-color: red;
+	width: 238px;
+	height: 332px;
+}
+
+.spellCastZone{
+	background-color: red;
+	width: 238px;
+	height: 332px;
+}
+
+.battlefield{
+	position: relative;
+	width: 80%;
+	background-color: yellow;
+}
