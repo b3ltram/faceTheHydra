@@ -46,9 +46,6 @@ class Creature extends Card {
 		this.manaCost = document.createElement("div")
 		this.manaCost.id = "manaCost"
 
-		this.cardStat = document.createElement("p")
-		this.cardStat.id = "cardStat";
-		this.cardStat.innerText = this.power + "/" + this.toughness;
 
 		this.divIllus = document.createElement("div")
 		this.divIllus.classList.add("illus")
@@ -67,6 +64,15 @@ class Creature extends Card {
 		this.elementFlavorText.classList.add("margin-auto")
 		this.elementFlavorText.innerText = this.flavorText
 
+		this.divStatContainer = document.createElement("div")
+		this.divStatContainer.id = "statContainer"
+		this.divStatContainer.classList.add("statContainer")
+
+		this.stat = document.createElement("p")
+		this.stat.id = "stat"
+		this.stat.classList.add("stat-container")
+		this.stat.innerText = this.power + "/" + this.toughness
+
 		battlefield.appendChild(this.divCardboard)
 		this.divCardboard.appendChild(this.divCardHeader)
 		this.divCardHeader.appendChild(this.cardName)
@@ -75,6 +81,8 @@ class Creature extends Card {
 		this.divCardboard.appendChild(this.divTextContainer)
 		this.divTextContainer.appendChild(this.ability)
 		this.divTextContainer.appendChild(this.elementFlavorText)
+		this.divCardboard.appendChild(this.divStatContainer)
+		this.divStatContainer.appendChild(this.stat)
 
 
 
