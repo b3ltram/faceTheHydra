@@ -17,7 +17,8 @@ class Card {
 	
 }
 
-
+//hacer class de tierra
+//hacer que card type, este en clase card
 
 class Creature extends Card {
 	constructor (name, flavorText, color, power, toughness){
@@ -51,13 +52,21 @@ class Creature extends Card {
 		this.divIllus.classList.add("illus")
 		this.divIllus.id = "illus"
 
+		this.divCardTypeContainer = document.createElement("div")
+		this.divCardTypeContainer.id = "cardTypeContainer"
+		this.divCardTypeContainer.classList.add("cardTypeContainer")
+
+		this.elementCardType = document.createElement("p")
+		this.elementCardType.innerText =  "Criatura - Lobo"//this.cardType
+
 		this.divTextContainer = document.createElement("div")
 		this.divTextContainer.id = "textContainer"
 		this.divTextContainer.classList.add("textContainer")
 
-		this.ability = document.createElement("p")
-		this.ability.id = "ability"
-		this.ability.classList.add("margin-auto")
+		this.elementAbility = document.createElement("p")
+		this.elementAbility.id = "ability"
+		this.elementAbility.classList.add("margin-auto")
+		//this.elementAbility.innerText = this.ability
 
 		this.elementFlavorText = document.createElement("p")
 		this.elementFlavorText.id = "flavorText"
@@ -66,11 +75,11 @@ class Creature extends Card {
 
 		this.divStatContainer = document.createElement("div")
 		this.divStatContainer.id = "statContainer"
-		this.divStatContainer.classList.add("statContainer")
+		this.divStatContainer.classList.add("stat-container")
 
 		this.stat = document.createElement("p")
 		this.stat.id = "stat"
-		this.stat.classList.add("stat-container")
+		this.stat.classList.add("stat")
 		this.stat.innerText = this.power + "/" + this.toughness
 
 		battlefield.appendChild(this.divCardboard)
@@ -78,63 +87,19 @@ class Creature extends Card {
 		this.divCardHeader.appendChild(this.cardName)
 		this.divCardHeader.appendChild(this.manaCost)
 		this.divCardboard.appendChild(this.divIllus)
+		this.divCardboard.appendChild(this.divCardTypeContainer)
+		this.divCardTypeContainer.appendChild(this.elementCardType)
 		this.divCardboard.appendChild(this.divTextContainer)
-		this.divTextContainer.appendChild(this.ability)
+		this.divTextContainer.appendChild(this.elementAbility)
 		this.divTextContainer.appendChild(this.elementFlavorText)
 		this.divCardboard.appendChild(this.divStatContainer)
 		this.divStatContainer.appendChild(this.stat)
 
-
-
-
-
-
-		/*
-		this.divDataCard.appendChild(this.cardName)
-		this.divDataCard.appendChild(this.cardStat)
-		this.divCardboard.appendChild(this.divDataCard)
-		battlefield.appendChild(this.divCardboard)
-		*/
 	}
 
 }
-
-//let a = new Card ("bosque", "habia una vez...", "verde");
-
 let b = new Creature ("lobo", "lobo solitario", "verde", 2,2);
 b.printCard(battlefield)
-/*
-let button = document.querySelector("#generate");
-let wolfBtn = document.querySelector("#genWolf");
 
-button.addEventListener("click",createGreyCard)
-wolfBtn.addEventListener("click",function (b) ){
-	let p = document.createElement("p")
-	p.innerText = b.name;
-	let newDiv = document.createElement("div")
-	newDiv.classList.add('card', 'green')
-	let battlefield = document.querySelector("#battlefield")
-	battlefield.appendChild(newDiv)
-	newDiv.appendChild(p)
-}
-
-
-
-function createGreyCard (){
-	let newDiv = document.createElement("div")
-	newDiv.classList.add('card')
-	let battlefield = document.querySelector("#battlefield")
-	battlefield.appendChild(newDiv)
-}*/
-
-/*
-function createWolf (creature){
-	let p = document.createElement("p")
-	p.innerText = creature.name;
-	let newDiv = document.createElement("div")
-	newDiv.classList.add('card', 'green')
-	let battlefield = document.querySelector("#battlefield")
-	battlefield.appendChild(newDiv)
-	newDiv.appendChild(p)
-}
-*/
+let c = new Creature ("Carolinita", "Pastelera", "blanco", 5,5);
+c.printCard(battlefield)
