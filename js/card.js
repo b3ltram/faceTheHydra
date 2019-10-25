@@ -2,11 +2,13 @@ let battlefield = document.querySelector("#battlefield")
 
 
 class Card {
-	constructor(name, flavorText, color){
+	constructor(name, cardType, superType, color,flavorText){
 		this.name = name;
 		this.flavorText= flavorText;
 		this.color = color;
 		this.visible = true;
+		this.cardType = cardType;
+		this.superType = superType;
 
 		//printing card
 		this.divCardboard = document.createElement("div")
@@ -17,19 +19,17 @@ class Card {
 	
 }
 
-//hacer class de tierra
-//hacer que card type, este en clase card
-
 class Creature extends Card {
-	constructor (name, flavorText, color, power, toughness){
+	constructor (name, cardType, superType, color,flavorText,ability, power, toughness){
 		super(name, flavorText, color)
 		this.name = name
 		this.flavorText = flavorText
 		this.color = color
 		this.power = power
 		this.toughness = toughness
-
-		
+		this.cardType = cardType
+		this.superType = superType
+		this.ability = ability
 	}
 
 	printCard(battlefield){
@@ -57,7 +57,7 @@ class Creature extends Card {
 		this.divCardTypeContainer.classList.add("cardTypeContainer")
 
 		this.elementCardType = document.createElement("p")
-		this.elementCardType.innerText =  "Criatura - Lobo"//this.cardType
+		this.elementCardType.innerText =  this.cardType + "-" + this.superType //this.cardType
 
 		this.divTextContainer = document.createElement("div")
 		this.divTextContainer.id = "textContainer"
@@ -66,7 +66,7 @@ class Creature extends Card {
 		this.elementAbility = document.createElement("p")
 		this.elementAbility.id = "ability"
 		this.elementAbility.classList.add("margin-auto")
-		//this.elementAbility.innerText = this.ability
+		this.elementAbility.innerText = this.ability
 
 		this.elementFlavorText = document.createElement("p")
 		this.elementFlavorText.id = "flavorText"
@@ -98,8 +98,105 @@ class Creature extends Card {
 	}
 
 }
-let b = new Creature ("lobo", "lobo solitario", "verde", 2,2);
+
+class Land extends Card {
+	constructor (name, cardType, superType, color) {
+		super(name, cardType, superType, color)
+		this.name = name
+		this.color = color
+		this.cardType = cardType
+		this.superType = superType
+	}
+
+	printCard(battlefield){
+		this.divCardHeader = document.createElement("div")
+		this.divCardHeader.classList.add("cardHeader")
+
+		this.cardName = document.createElement("p")
+		this.cardName.id = "cardName"
+		this.cardName.classList.add("cardName")
+		this.cardName.innerText = this.name
+
+		this.illus = document.createElement("div")
+		this.illus.id = "illus"
+		this.illus.classList.add("illus")
+
+		this.divCardTypeContainer = document.createElement("div")
+		this.divCardTypeContainer.classList.add("cardTypeContainer")
+
+		this.elementCardType = document.createElement("p")
+		this.elementCardType.innerText = this.cardType
+
+		battlefield.appendChild(this.divCardboard)
+		this.divCardboard.appendChild(this.divCardHeader)
+		this.divCardHeader.appendChild(this.cardName)
+		this.divCardboard.appendChild(this.illus)
+		this.divCardboard.appendChild(this.divCardTypeContainer)
+		this.divCardTypeContainer.appendChild(this.elementCardType)
+	}
+}
+
+class Spell extends Card{
+constructor (name, cardType, superType, color, flavorText, ability) {
+		super(name, cardType, superType, color)
+		this.name = name
+		this.color = color
+		this.cardType = cardType
+		this.superType = superType
+		this.flavorText = flavorText
+		this.ability = ability
+	}
+
+	printCard(battlefield){
+		this.divCardHeader = document.createElement("div")
+		this.divCardHeader.classList.add("cardHeader")
+
+		this.cardName = document.createElement("p")
+		this.cardName.id = "cardName"
+		this.cardName.classList.add("cardName")
+		this.cardName.innerText = this.name
+
+		this.illus = document.createElement("div")
+		this.illus.id = "illus"
+		this.illus.classList.add("illus")
+
+		this.divCardTypeContainer = document.createElement("div")
+		this.divCardTypeContainer.classList.add("cardTypeContainer")
+
+		this.elementCardType = document.createElement("p")
+		this.elementCardType.innerText = this.cardType
+
+		this.divTextContainer = document.createElement("div")
+		this.divTextContainer.id = "textContainer"
+		this.divTextContainer.classList.add("textContainer")
+
+		this.elementAbility = document.createElement("p")
+		this.elementAbility.id = "ability"
+		this.elementAbility.classList.add("margin-auto")
+		this.elementAbility.innerText = this.ability
+
+		this.elementFlavorText = document.createElement("p")
+		this.elementFlavorText.id = "flavorText"
+		this.elementFlavorText.classList.add("margin-auto")
+		this.elementFlavorText.innerText = this.flavorText		
+
+		battlefield.appendChild(this.divCardboard)
+		this.divCardboard.appendChild(this.divCardHeader)
+		this.divCardHeader.appendChild(this.cardName)
+		this.divCardboard.appendChild(this.illus)
+		this.divCardboard.appendChild(this.divCardTypeContainer)
+		this.divCardTypeContainer.appendChild(this.elementCardType)
+		this.divCardboard.appendChild(this.divTextContainer)
+		this.divTextContainer.appendChild(this.elementAbility)
+		this.divTextContainer.appendChild(this.elementFlavorText)
+	}	
+}
+
+
+
+let b = new Creature ("lobo", "Criatura", "lobo",  "verde" , "lobo solitario", "cuando ingresa al campo de batalla roba dos cartas",  2,2);
 b.printCard(battlefield)
 
-let c = new Creature ("Carolinita", "Pastelera", "blanco", 5,5);
-c.printCard(battlefield)
+let rayo = new Spell ("rayito", "instant", null, "rojo", "es un rayito loco", "quita 3 puntos de vida")
+rayo.printCard(battlefield)
+
