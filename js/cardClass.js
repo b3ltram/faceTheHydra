@@ -1,6 +1,6 @@
 class hydraHead extends Creature {
 	constructor(){
-	super(name, cardType, superType, color,flavorText,ability, power, toughness)
+	super("test", "cardType", "superType", "color","flavorText","ability", "0", "3")
 	this.name = "Cabeza de hydra"
 	this.flavorText = null
 	this.color = null
@@ -13,5 +13,8 @@ class hydraHead extends Creature {
 	}
 }
 
-let h = new hydraHead (null,null,null,null,null,null,null,null,)
+
+
+
+let h = new hydraHead ()
 h.printCard(battlefield)
