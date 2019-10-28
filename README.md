@@ -6,3 +6,5 @@ v0.2: argumentos de clases reordenados, clase de criatura terminada y agregada c
 v0.21: la clase de Hydra head ya esta solucionada, aunque posiblemente contenga algunos fallos que no afectan al funcionamiento dado que el objeto responde a los comandos solicitados e imprime los datos correctos
 
 v0.212: agregado de clases (cartas) a cardClass
+
+v0.22: todas las cartas del mazos tienen su respectiva clase (solo grafico). comienzo de desarrollo del mazo y generacion automatica del mismo
