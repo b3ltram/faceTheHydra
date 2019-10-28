@@ -8,3 +8,5 @@ v0.21: la clase de Hydra head ya esta solucionada, aunque posiblemente contenga 
 v0.212: agregado de clases (cartas) a cardClass
 
 v0.22: todas las cartas del mazos tienen su respectiva clase (solo grafico). comienzo de desarrollo del mazo y generacion automatica del mismo
+
+v0.221: trabajando en la clase librery, con errores -- no funcional --
