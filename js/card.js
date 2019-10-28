@@ -30,6 +30,11 @@ class Creature extends Card {
 		this.cardType = cardType
 		this.superType = superType
 		this.ability = ability
+
+		this.currentPower = this.power
+		this.currentToughness = this.toughness
+		this.currentColor = this.color
+		this.currentSuperType = this.superType
 	}
 
 	printCard(battlefield){
@@ -196,7 +201,4 @@ constructor (name, cardType, superType, color, flavorText, ability) {
 
 let b = new Creature ("lobo", "Criatura", "lobo",  "verde" , "lobo solitario", "cuando ingresa al campo de batalla roba dos cartas",  2,2);
 b.printCard(battlefield)
-
-let rayo = new Spell ("rayito", "instant", null, "rojo", "es un rayito loco", "quita 3 puntos de vida")
-rayo.printCard(battlefield)
 
