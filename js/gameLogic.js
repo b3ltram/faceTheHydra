@@ -1,6 +1,9 @@
+const button = document.querySelector("#button")
+
 class librery {
 	constructor(){
 		this.deck = []
+		this.battlefieldCards = []
 
 
 		for (var i=1; i<=11; i++){
@@ -17,71 +20,84 @@ class librery {
 		this.deck.push(snappingHead)
 
 		let savageVigorHead = new SavageVigorHead()
-		deck.push(savageVigorHead)
+		this.deck.push(savageVigorHead)
 
 		let shriekingTitanHead = new ShriekingTitanHead()
-		deck.push(shriekingTitanHead)
+		this.deck.push(shriekingTitanHead)
 
 		for (var i=1; i<=2; i++){
 			let cartita = new StrikeWeakSpot()
-			deck.push(cartita)
+			this.deck.push(cartita)
 		}
 
 		for (var i=1; i<=4; i++){
 			let cartita = new NoxiousHydraBreath()
-			deck.push(cartita)
+			this.deck.push(cartita)
 		}
 
 		for (var i=1; i<=3; i++){
 			let cartita = new NeckTangle()
-			deck.push(cartita)
+			this.deck.push(cartita)
 		}
 
 		for (var i=1; i<=4; i++){
 			let cartita = new TornBetweenHeads()
-			deck.push(cartita)
+			this.deck.push(cartita)
 		}
 
 		for (var i=1; i<=5; i++){
 			let cartita = new DistractHydra()
-			deck.push(cartita)
+			this.deck.push(cartita)
 		}
 
 		for (var i=1; i<=6; i++){
 			let cartita = new UnifiedLunge()
-			deck.push(cartita)
+			this.deck.push(cartita)
 		}
 
 		for (var i=1; i<=5; i++){
 			let cartita = new DisorientingGlower()
-			deck.push(cartita)
+			this.deck.push(cartita)
 		}
 
 		for (var i=1; i<=4; i++){
 			let cartita = new HydrasImpenetrableHide()
-			deck.push(cartita)
+			this.deck.push(cartita)
 		}
 
 		for (var i=1; i<=4; i++){
 			let cartita = new GrownFromStump()
-			deck.push(cartita)
+			this.deck.push(cartita)
 		}
 
 		for (var i=1; i<=5; i++){
 			let cartita = new SwallowHerOWhole()
-			deck.push(cartita)
+			this.deck.push(cartita)
 		}
 	}
 
 
-	/*
-	function showCard(battlefield){
-		let counter = 0
-		this.deck[counter].printCard(battlefield)
-		counter++
-	}*/
+	
+	showCard (battlefield) {
+		this.battlefieldCards.push(this.deck[0]);
+		this.deck.shift();
+	}
 
 
 }
 
+
+
 let lib = new librery();
+
+button.addEventListener("click",function (){
+	lib.showCard(battlefield)
+})
+
+for (var i = lib.battlefieldCards.length -1; i >= 0; i--) {
+	lib.battlefieldCards[i].printCard(battlefield)
+}
+
+
+console.log(lib.deck)
+console.log(lib.battlefieldCards)
