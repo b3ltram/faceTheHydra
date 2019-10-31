@@ -4,6 +4,7 @@ class librery {
 	constructor(){
 		this.deck = []
 		this.battlefieldCards = []
+		this.graveyard = []
 
 
 		for (var i=1; i<=11; i++){
@@ -83,6 +84,23 @@ class librery {
 		this.deck.shift();
 	}
 
+	hydraDrawCard (battlefield){
+		if (this.deck[0].cardType == "Criatura" || this.deck[0].cardType == "Criatura elite"){
+			//battlefield.innerHTML = " "
+			this.battlefieldCards.push(this.deck[0]);
+			this.deck.shift();
+			for (var i = lib.battlefieldCards.length -1; i >= 0; i--) {
+				lib.battlefieldCards[i].printCard(battlefield)
+			}
+		}else{
+			this.graveyard.push(this.deck[0]);
+			this.deck.shift();
+		}
+
+		if (this.battlefieldCards.length == 0){
+			console.log("gasnaste!! :D")
+		}
+	}
 
 }
 
@@ -91,7 +109,8 @@ class librery {
 let lib = new librery();
 
 button.addEventListener("click",function (){
-	lib.showCard(battlefield)
+	lib.hydraDrawCard(battlefield)
+	console.log(lib)
 })
 
 for (var i = lib.battlefieldCards.length -1; i >= 0; i--) {
@@ -99,5 +118,5 @@ for (var i = lib.battlefieldCards.length -1; i >= 0; i--) {
 }
 
 
-console.log(lib.deck)
-console.log(lib.battlefieldCards)
+
+

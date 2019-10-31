@@ -26,7 +26,7 @@ class RavenousBruteHead extends Creature{
 		this.color = null
 		this.power = 0
 		this.toughness = 6
-		this.cardType = "criatura elite"
+		this.cardType = "Criatura elite"
 		this.superType = "cabeza"
 		this.ability = "Heross Reward - When Ravenous Brute Head leaves the battlefield, each player gains 2 life and draws a card."
 
@@ -45,7 +45,7 @@ class SnappingFangHead extends Creature{
 		this.color = null
 		this.power = 0
 		this.toughness = 8
-		this.cardType = "criatura elite"
+		this.cardType = "Criatura elite"
 		this.superType = "cabeza"
 		this.ability = "At the beginning of the Hydra’s end step, Snapping Fang Head deals 1 damage to each player." + 
 			"Hero’s Reward — When Snapping Fang Head leaves the battlefield, each player gains 4 life and draws a card."
@@ -65,7 +65,7 @@ class SavageVigorHead extends Creature{
 		this.color = null
 		this.power = 0
 		this.toughness = 8
-		this.cardType = "criatura elite"
+		this.cardType = "Criatura elite"
 		this.superType = "cabeza"
 		this.ability = "At the beginning of the Hydra’s end step, reveal the top card of the Hydra’s library and the Hydra casts that card." + 
 			"Hero’s Reward — When Savage Vigor Head leaves the battlefield, each player gains 4 life and draws a card."
@@ -85,7 +85,7 @@ class ShriekingTitanHead extends Creature{
 		this.color = null
 		this.power = 0
 		this.toughness = 8
-		this.cardType = "criatura elite"
+		this.cardType = "Criatura elite"
 		this.superType = "cabeza"
 		this.ability = "At the beginning of the Hydra’s end step, each player discards a card." + 
 			"Hero’s Reward — When Shrieking Titan Head leaves the battlefield, each player gains 4 life and draws a card."
