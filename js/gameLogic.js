@@ -98,7 +98,7 @@ class librery {
 
 	hydraDrawCard (battlefield){
 		if (this.deck[0].cardType == "Criatura" || this.deck[0].cardType == "Criatura elite"){
-			//battlefield.innerHTML = " "
+			battlefield.innerHTML = " "
 			this.battlefieldCards.push(this.deck[0]);
 			this.deck.shift();
 			for (var i = lib.battlefieldCards.length -1; i >= 0; i--) {

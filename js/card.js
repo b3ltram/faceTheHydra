@@ -11,9 +11,7 @@ class Card {
 		this.superType = superType;
 
 		//printing card
-		this.divCardboard = document.createElement("div")
-		this.divCardboard.id = "cardboard"
-		this.divCardboard.classList.add("cardboard")
+		
 	}
 
 	
@@ -41,7 +39,9 @@ class Creature extends Card {
 
 	printCard(battlefield){
 
-
+		this.divCardboard = document.createElement("div")
+		this.divCardboard.id = "cardboard"
+		this.divCardboard.classList.add("cardboard")
 
 		this.divCardHeader = document.createElement("div")
 		this.divCardHeader.classList.add("cardHeader")
@@ -116,6 +116,10 @@ class Land extends Card {
 	}
 
 	printCard(battlefield){
+		this.divCardboard = document.createElement("div")
+		this.divCardboard.id = "cardboard"
+		this.divCardboard.classList.add("cardboard")
+
 		this.divCardHeader = document.createElement("div")
 		this.divCardHeader.classList.add("cardHeader")
 
@@ -155,6 +159,10 @@ constructor (name, cardType, superType, color, flavorText, ability) {
 	}
 
 	printCard(battlefield){
+		this.divCardboard = document.createElement("div")
+		this.divCardboard.id = "cardboard"
+		this.divCardboard.classList.add("cardboard")
+		
 		this.divCardHeader = document.createElement("div")
 		this.divCardHeader.classList.add("cardHeader")
 
