@@ -35,6 +35,8 @@ class Creature extends Card {
 		this.currentToughness = this.toughness
 		this.currentColor = this.color
 		this.currentSuperType = this.superType
+
+		
 	}
 
 	printCard(battlefield){
@@ -99,8 +101,8 @@ class Creature extends Card {
 		this.divTextContainer.appendChild(this.elementFlavorText)
 		this.divCardboard.appendChild(this.divStatContainer)
 		this.divStatContainer.appendChild(this.stat)
-
 	}
+
 
 }
 

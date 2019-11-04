@@ -1,5 +1,6 @@
 const button = document.querySelector("#button")
 
+
 class librery {
 	constructor(){
 		this.deck = []
@@ -77,7 +78,18 @@ class librery {
 		}
 	}
 
+	shuffleLib(){
+		let temp
+		let random
+		for (var i=this.deck.length - 1; i > 0; i--){
+			random = Math.floor(Math.random() * (i + 1));
+			temp = this.deck[i]
+			this.deck[i] = this.deck[random]
+			this.deck[random] = temp
 
+
+		}
+	}
 	
 	showCard (battlefield) {
 		this.battlefieldCards.push(this.deck[0]);
@@ -108,6 +120,8 @@ class librery {
 
 let lib = new librery();
 
+lib.shuffleLib()
+
 button.addEventListener("click",function (){
 	lib.hydraDrawCard(battlefield)
 	console.log(lib)
@@ -118,5 +132,5 @@ for (var i = lib.battlefieldCards.length -1; i >= 0; i--) {
 }
 
 
-
+//test
 
