@@ -107,6 +107,8 @@ class librery {
 		}else{
 			this.graveyard.push(this.deck[0]);
 			this.deck.shift();
+			document.querySelector("#graveyardCounter").innerHTML=""
+			document.querySelector("#graveyardCounter").innerHTML= this.graveyard.length
 		}
 
 		if (this.battlefieldCards.length == 0){

@@ -2,42 +2,38 @@
 <html charset="UTF-8">
 <head>
 	<title></title>
-
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link rel="stylesheet" type="text/css" href="css/cardStyle.css">
 </head>
  
 <body>
+	<div class="container-fluid">
+		<button type="button" id="button" class="btn btn-outline-primary">otra carta</button>
+		<div  class="container">
+			<div class="row d-flex justify-content-around">
+				<div id="deckZone" class="col-3 cardSize"></div>
+				<div id="spellZone" class="col-3 cardSize"></div>
+				<div id="graveyard" class="col-3 cardSize"><p id="graveyardCounter" class="text-center"></p></div>	
+			</div>
 
-<div id="board" class="board">
-	<div id="top" class="top">
-		<div id="deckZone" class="deckZone"></div>
-		<div id="spellZone" class="spellZone"></div>
-		<div id="graveyard" class="graveyard"></div>
+			<div id="battlefield" class="row d-flex justify-content-around"></div>
+		</div>
+	</div>
 
-		
-	</div>
-	<span style="height: 20px;"></span>
-	<button id="button">otra carta</button>
-	<div id="battlefield" class="battlefield">
-		
-	</div>
-</div>
 
  
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.3.1.slim.min"></script>
     <script src="js/popper.min"></script>
     <script src="js/bootstrap.js"></script>
 
-<script src="js/card.js"></script>
-<script src="js/cardClass.js"></script>
-<script src="js/gameLogic.js"></script>
- 
+	<script src="js/card.js"></script>
+	<script src="js/cardClass.js"></script>
+	<script src="js/gameLogic.js"></script>
+	 
 </body>
 </html>
