@@ -1,4 +1,4 @@
-let battlefield = document.querySelector("#battlefield")
+
 
 
 class Card {

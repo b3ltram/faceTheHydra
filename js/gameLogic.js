@@ -1,3 +1,7 @@
+const battlefield = document.querySelector("#battlefield")
+const castViewer = document.querySelector("#castViewer")
+const graveyardZone = document.querySelector("#graveyard")
+
 const button = document.querySelector("#button")
 
 
@@ -78,6 +82,14 @@ class librery {
 		}
 	}
 
+	
+	startGame(){
+		for (var i=0; i <= 2; i++){
+			this.battlefieldCards.push(this.deck[i])
+			this.deck.shift()
+		}
+	}
+
 	shuffleLib(){
 		let temp
 		let random
@@ -86,8 +98,6 @@ class librery {
 			temp = this.deck[i]
 			this.deck[i] = this.deck[random]
 			this.deck[random] = temp
-
-
 		}
 	}
 	
@@ -105,10 +115,17 @@ class librery {
 				lib.battlefieldCards[i].printCard(battlefield)
 			}
 		}else{
+			castViewer.innerHTML = null
+			graveyardZone.innerHTML = null
 			this.graveyard.push(this.deck[0]);
+			this.deck[0].printCard(castViewer)
+			this.deck[0].printCard(graveyard)
 			this.deck.shift();
+			document.querySelector("#deckCounter").innerHTML=""
+			document.querySelector("#deckCounter").innerHTML= this.deck.length
 			document.querySelector("#graveyardCounter").innerHTML=""
 			document.querySelector("#graveyardCounter").innerHTML= this.graveyard.length
+			
 		}
 
 		if (this.battlefieldCards.length == 0){
@@ -121,18 +138,32 @@ class librery {
 
 
 let lib = new librery();
-
+lib.startGame()
 lib.shuffleLib()
+document.querySelector("#deckCounter").innerHTML= lib.deck.length
+
+
+
 
 button.addEventListener("click",function (){
 	lib.hydraDrawCard(battlefield)
 	console.log(lib)
 })
+/*
+
+*/
 
 for (var i = lib.battlefieldCards.length -1; i >= 0; i--) {
 	lib.battlefieldCards[i].printCard(battlefield)
+
+
 }
 
+const cartas = document.querySelectorAll("#cardboard") 
 
-//test
 
+for (var i= 0; i <= cartas.length; i++ ){
+	cartas[i].addEventListener("mouseover",function (e){
+		console.log("test")
+	})
+}
