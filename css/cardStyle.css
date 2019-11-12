@@ -11,6 +11,7 @@
 }
 
 .cardboard{
+	position: relative;
 	width: 238px;
 	height: 332px;
 	background-color: grey;
@@ -62,4 +63,12 @@
 
 .tapped{
 	transform: rotate(90deg);
+}
+
+.cardCover{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 238px;
+	height: 332px;
 }

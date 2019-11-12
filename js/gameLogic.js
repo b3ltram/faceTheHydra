@@ -82,7 +82,16 @@ class librery {
 		}
 	}
 
-	
+	cardPreview(){
+		const cartas = document.querySelectorAll(".cardboard") 
+
+		for (var i = 0; i < cartas.length; i++){
+			cartas[i].addEventListener("mouseover",function(e){
+				console.log(e.target.id)
+			})
+		}
+	}
+
 	startGame(){
 		for (var i=0; i <= 2; i++){
 			this.battlefieldCards.push(this.deck[i])
@@ -114,6 +123,7 @@ class librery {
 			for (var i = lib.battlefieldCards.length -1; i >= 0; i--) {
 				lib.battlefieldCards[i].printCard(battlefield)
 			}
+			this.cardPreview()
 		}else{
 			castViewer.innerHTML = null
 			graveyardZone.innerHTML = null
@@ -136,34 +146,27 @@ class librery {
 }
 
 
-
+//creacion de mazo
 let lib = new librery();
+//repartir cabezas
 lib.startGame()
+//mezcla de barajas
 lib.shuffleLib()
 document.querySelector("#deckCounter").innerHTML= lib.deck.length
 
 
 
-
+//boton para que hydra levante carta
 button.addEventListener("click",function (){
 	lib.hydraDrawCard(battlefield)
 	console.log(lib)
 })
-/*
 
-*/
-
+//recorrido del battlefield para que se impriman las cartas al inicio
 for (var i = lib.battlefieldCards.length -1; i >= 0; i--) {
 	lib.battlefieldCards[i].printCard(battlefield)
-
-
 }
 
-const cartas = document.querySelectorAll("#cardboard") 
 
 
-for (var i= 0; i <= cartas.length; i++ ){
-	cartas[i].addEventListener("mouseover",function (e){
-		console.log("test")
-	})
-}
+lib.cardPreview()

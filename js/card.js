@@ -40,7 +40,7 @@ class Creature extends Card {
 	printCard(battlefield){
 
 		this.divCardboard = document.createElement("div")
-		this.divCardboard.id = "cardboard"
+		this.divCardboard.id = this.name
 		this.divCardboard.classList.add("cardboard")
 
 		this.divCardHeader = document.createElement("div")
@@ -89,6 +89,10 @@ class Creature extends Card {
 		this.stat.classList.add("stat")
 		this.stat.innerText = this.power + "/" + this.toughness
 
+		this.cover = document.createElement("div")
+		this.cover.id = this.name
+		this.cover.classList.add("cardCover")
+
 		battlefield.appendChild(this.divCardboard)
 		this.divCardboard.appendChild(this.divCardHeader)
 		this.divCardHeader.appendChild(this.cardName)
@@ -101,6 +105,7 @@ class Creature extends Card {
 		this.divTextContainer.appendChild(this.elementFlavorText)
 		this.divCardboard.appendChild(this.divStatContainer)
 		this.divStatContainer.appendChild(this.stat)
+		this.divCardboard.appendChild(this.cover)
 	}
 
 
@@ -117,7 +122,7 @@ class Land extends Card {
 
 	printCard(battlefield){
 		this.divCardboard = document.createElement("div")
-		this.divCardboard.id = "cardboard"
+		this.divCardboard.id = this.name
 		this.divCardboard.classList.add("cardboard")
 
 		this.divCardHeader = document.createElement("div")
@@ -138,12 +143,18 @@ class Land extends Card {
 		this.elementCardType = document.createElement("p")
 		this.elementCardType.innerText = this.cardType
 
+		this.cover = document.createElement("div")
+		this.cover.id = this.name
+		this.cover.classList.add("cardCover")
+		
+
 		battlefield.appendChild(this.divCardboard)
 		this.divCardboard.appendChild(this.divCardHeader)
 		this.divCardHeader.appendChild(this.cardName)
 		this.divCardboard.appendChild(this.illus)
 		this.divCardboard.appendChild(this.divCardTypeContainer)
 		this.divCardTypeContainer.appendChild(this.elementCardType)
+		this.divCardboard.appendChild(this.cover)
 	}
 }
 
@@ -160,7 +171,7 @@ constructor (name, cardType, superType, color, flavorText, ability) {
 
 	printCard(battlefield){
 		this.divCardboard = document.createElement("div")
-		this.divCardboard.id = "cardboard"
+		this.divCardboard.id = this.name
 		this.divCardboard.classList.add("cardboard")
 		
 		this.divCardHeader = document.createElement("div")
@@ -193,7 +204,11 @@ constructor (name, cardType, superType, color, flavorText, ability) {
 		this.elementFlavorText = document.createElement("p")
 		this.elementFlavorText.id = "flavorText"
 		this.elementFlavorText.classList.add("margin-auto")
-		this.elementFlavorText.innerText = this.flavorText		
+		this.elementFlavorText.innerText = this.flavorText
+
+		this.cover = document.createElement("div")
+		this.cover.classList.add("cardCover")		
+		this.cover.id = this.name
 
 		battlefield.appendChild(this.divCardboard)
 		this.divCardboard.appendChild(this.divCardHeader)
@@ -204,6 +219,7 @@ constructor (name, cardType, superType, color, flavorText, ability) {
 		this.divCardboard.appendChild(this.divTextContainer)
 		this.divTextContainer.appendChild(this.elementAbility)
 		this.divTextContainer.appendChild(this.elementFlavorText)
+		this.divCardboard.appendChild(this.cover)
 	}	
 }
 
