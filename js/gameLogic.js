@@ -86,8 +86,18 @@ class librery {
 		const cartas = document.querySelectorAll(".cardboard") 
 
 		for (var i = 0; i < cartas.length; i++){
-			cartas[i].addEventListener("mouseover",function(e){
-				console.log(e.target.id)
+			let temp = cartas[i]
+			cartas[i].addEventListener("mouseover",function(e,temp){
+				for (var i = 0; i < cartas.length; i++){
+					if (temp.name == e.target.id){
+						temp.printCard(castViewer)
+						console.log("entro al for")
+					}else{
+						console.log(e.target.id)
+						console.log(temp.name)
+						console.log("NO entro al for")
+					}
+				}
 			})
 		}
 	}
@@ -159,7 +169,6 @@ document.querySelector("#deckCounter").innerHTML= lib.deck.length
 //boton para que hydra levante carta
 button.addEventListener("click",function (){
 	lib.hydraDrawCard(battlefield)
-	console.log(lib)
 })
 
 //recorrido del battlefield para que se impriman las cartas al inicio
